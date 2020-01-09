@@ -1,0 +1,9 @@
+.leaderboard-wrapper {
+    margin: auto;
+    width: 50%
+}
+
+table {
+    width: 60%;
+    text-align: right;
+}

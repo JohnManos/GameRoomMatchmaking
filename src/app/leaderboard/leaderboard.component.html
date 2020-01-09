@@ -1,0 +1,14 @@
+<div class="leaderboard-wrapper">
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>MMR</th>
+        </tr>
+        <tr *ngFor="let entry of leaderboardData; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ entry.name }}</td>
+            <td>{{ entry.mmr }}</td>
+        </tr>
+    </table>
+</div>
