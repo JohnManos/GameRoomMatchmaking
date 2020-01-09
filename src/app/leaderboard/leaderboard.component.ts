@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MockLeaderboardDataService } from '../services/mock-leaderboard-data.service';
 
 @Component({
   selector: 'app-leaderboard',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./leaderboard.component.css']
 })
 export class LeaderboardComponent implements OnInit {
+  private leaderboardData: any;
 
-  constructor() { }
+  constructor(private leaderboard: MockLeaderboardDataService) {
+    this.leaderboard = leaderboard;
+  }
 
   ngOnInit() {
+    this.leaderboardData = this.leaderboard.getLeaderboardData(0, 0);
   }
 
 }

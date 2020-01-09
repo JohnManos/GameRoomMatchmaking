@@ -5,10 +5,10 @@
             <th>Name</th>
             <th>MMR</th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>Reilly M</td>
-            <th>9001</th>
+        <tr *ngFor="let entry of leaderboardData; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ entry.name }}</td>
+            <td>{{ entry.mmr }}</td>
         </tr>
     </table>
 </div>
