@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Neon80s;
+    src: url("fonts/neon80s.ttf");
+}
+
+@font-face {
+    font-family: PressStart;
+    src: url("fonts/pressstart2p.ttf");
+}
+
+body {
+    background-image: url("images/gameroom.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.big-button {
+    background: hsl(0, 0%, 5%);
+    border-radius: 8px;
+    color: hsl(0, 0%, 90%);
+    border: 2px;
+    border-color:#00b68b;
+    border-style: solid;
+    box-shadow: 0px 0px 2px 0px #00b68b;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 48px;
+    line-height: 48px;
+    font-family: Neon80s, sans-serif;
+    transition: .1s;
+}
+
+.big-button:hover {
+    box-shadow: 0px 0px 4px 2px #00b68b;
+}
+
+.p-test1 {
+    color: white;
+    font-family: Neon80s;
+    font-size: 24px;
+}
+
+.p-test2 {
+    color: white;
+    font-family: PressStart;
+    font-size: 16px;
+}
