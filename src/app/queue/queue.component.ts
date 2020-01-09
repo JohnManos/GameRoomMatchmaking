@@ -13,11 +13,11 @@ export class QueueComponent implements OnInit {
   constructor(matchservice: MatchService) {
     var index = 0;
     for (let i in matchservice.match.teamOne) {
-      this.players[i] = new Player(matchservice.match.teamOne[i].id, matchservice.match.teamOne[i].name);
+      this.players[index] = new Player(matchservice.match.teamOne[i].id, matchservice.match.teamOne[i].name);
       index++;
     }
     for (let i in matchservice.match.teamTwo) {
-      this.players[i] = new Player(matchservice.match.teamTwo[i].id, matchservice.match.teamTwo[i].name);
+      this.players[index] = new Player(matchservice.match.teamTwo[i].id, matchservice.match.teamTwo[i].name);
       index++;
     }
   }
