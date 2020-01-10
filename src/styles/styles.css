@@ -9,7 +9,7 @@
     src: url("fonts/pressstart2p.ttf");
 }
 
-body {
+body, .home-wrapper {
     background-image: url("images/gameroom.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
