@@ -7,6 +7,12 @@ export class MockLeaderboardDataService {
 
   constructor() { }
 
+  getFakePlayerNames(n: number): string[] {
+    const players = ['Reilly M', 'John M', 'Jose T', 'Asher H', 'Vanessa Y', 'Bryan O', 'Sam T', 'Adis G', 'Adrian S', 'Adriana L', 'Adriano V', 'Daniela F', 'David C', 'Dwayne T', 'Gerald T', 'Hannah K', 'Jessie C', 'Kareem H', 'Lauren C', 'Molly B'];
+    const shuffled = players.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, n);
+  }
+
   getLeaderboardData(gameType, gameMode): any {
     const firstPlace = {
       name: "Reilly M",
