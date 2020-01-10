@@ -1,0 +1,13 @@
+.leaderboard-wrapper {
+    margin: auto;
+    width: 50%
+}
+
+#game-mode {
+    display: block;
+}
+
+table {
+    width: 60%;
+    text-align: left;
+}

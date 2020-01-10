@@ -1,0 +1,25 @@
+<div class="leaderboard-wrapper">
+    <select id="game-type">
+        <option>- Select game type -</option>
+        <option>Pool</option>
+        <option>Air hockey</option>
+        <option>Foozball</option>
+    </select>
+    <select id="game-mode">
+        <option>- Select game mode -</option>
+        <option>Solo</option>
+        <option>Duo</option>
+    </select>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>MMR</th>
+        </tr>
+        <tr *ngFor="let entry of leaderboardData; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ entry.name }}</td>
+            <td>{{ entry.mmr }}</td>
+        </tr>
+    </table>
+</div>
