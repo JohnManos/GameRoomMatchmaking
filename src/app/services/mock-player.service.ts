@@ -19,4 +19,8 @@ export class MockPlayerService {
   getPlayerById(id: string): Player {
     return this.players.filter(player => player.id == id)[0];
   }
+
+  getAll() : Player[] {
+    return this.players;
+  }
 }
