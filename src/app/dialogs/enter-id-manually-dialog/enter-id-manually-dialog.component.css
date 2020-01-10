@@ -1,0 +1,27 @@
+.medium-button {
+    background: hsl(0, 0%, 5%);
+    border-radius: 8px;
+    color: hsl(0, 0%, 90%);
+    border: 2px;
+    border-color:#00b68b;
+    border-style: solid;
+    box-shadow: 0px 0px 2px 0px #00b68b;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    line-height: 24px;
+    font-family: Neon80s, sans-serif;
+    transition: .1s;
+}
+
+.medium-button:hover {
+    box-shadow: 0px 0px 4px 2px #00b68b;
+}
+
+.dialogGamesTitle {
+    color: white;
+    font-family: Neon80s;
+    text-align: center;
+}
