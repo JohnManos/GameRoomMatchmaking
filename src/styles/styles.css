@@ -10,9 +10,9 @@
 }
 
 body {
-    background-image: url("images/gameroom.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background: url("images/gameroom.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-position: center top;
 }
 
 button:focus {outline:0;}
@@ -42,6 +42,42 @@ button:focus {outline:0;}
 p {
     color: white;
     font-family: PressStart;
-    font-size: 12px;
+    font-size: 16px;
+}
+
+table {
+    color: white;
+    font-family: PressStart;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
     text-align: center;
+    text-shadow: 1px 1px 2px black
+}
+
+td, th {
+    font-weight: 400;
+}
+
+td {
+    padding: 5px 15px 0px 15px;
+}
+
+select {
+    background: hsl(0, 0%, 5%);
+    border-radius: 8px;
+    color: hsl(0, 0%, 90%);
+    border: 2px;
+    border-color:#00b68b;
+    border-style: solid;
+    box-shadow: 0px 0px 2px 0px #00b68b;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    line-height: 28px;
+    font-family: Neon80s, sans-serif;
+    transition: .1s;
 }
