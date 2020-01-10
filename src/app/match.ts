@@ -2,8 +2,8 @@ import { Player } from './player';
 import { GameMode } from './game-mode.enum';
 
 export class Match {
-    id: string;
-    //gameType: GameType;
+    matchId: string;
+    gameType: string;
     gameMode: GameMode;
     teamOne: Player[] = Array();
     teamTwo: Player[] = Array();
