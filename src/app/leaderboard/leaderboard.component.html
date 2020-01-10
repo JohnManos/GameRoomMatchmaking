@@ -1,15 +1,25 @@
 <div class="leaderboard-wrapper">
-    <select id="game-type">
-        <option>- Select game type -</option>
-        <option>Pool</option>
-        <option>Air hockey</option>
-        <option>Foozball</option>
-    </select>
-    <select id="game-mode">
-        <option>- Select game mode -</option>
-        <option>Solo</option>
-        <option>Duo</option>
-    </select>
+    <table>
+        <tr>
+            <td>
+                <select id="game-type" [(ngModel)]="selectedGameType">
+                    <option value="empty">- Select game type -</option>
+                    <option value="pool">Pool</option>
+                    <option value="air-hockey">Air hockey</option>
+                    <option value="foosball">Foosball</option>
+                </select>
+            </td>
+            <td [hidden]="selectedGameType == 'empty'">
+                <select id="game-mode">
+                    <option>- Select game mode -</option>
+                    <option value="solo">Solo</option>
+                    <option value="duo" [hidden]="selectedGameType == 'air-hockey'">Duo</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    
+    
     <table>
         <tr>
             <th>#</th>
