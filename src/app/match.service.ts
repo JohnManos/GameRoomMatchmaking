@@ -32,14 +32,14 @@ export class MatchService {
   }
 
   getQueueStatus(): Observable<Player[]>{
-    return this.http.get<Player[]>('localhost:8080');
+    return this.http.get<Player[]>('localhost:8000/api');
   }
 
   getMatch(): Observable<Match> {
-    return this.http.get<Match>('localhost:8080');
+    return this.http.get<Match>('localhost:8000/api');
   }
 
   postMatch() {
-    this.http.post<Match>('localhost:8080', this.match);
+    this.http.post<Match>('localhost:8000/api', this.match);
   }
 }
