@@ -6,21 +6,32 @@ import { AppComponent } from './app.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { QueueComponent } from './queue/queue.component';
 import { HomeComponent } from './home/home.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material';
+import { QueueDialogComponent } from './dialogs/queue-dialog/queue-dialog.component';
+import { MaterialModule } from './material/material-module';
+import { PrivateMatchDialogComponent } from './dialogs/private-match-dialog/private-match-dialog.component';
+import { SelectGameModeDialogComponent } from './dialogs/select-game-mode-dialog/select-game-mode-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LeaderboardComponent,
     QueueComponent,
-    HomeComponent
+    HomeComponent,
+    QueueDialogComponent,
+    PrivateMatchDialogComponent,
+    SelectGameModeDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NoopAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule,
+    MatDialogModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [QueueDialogComponent, PrivateMatchDialogComponent, SelectGameModeDialogComponent]
 })
 export class AppModule { }

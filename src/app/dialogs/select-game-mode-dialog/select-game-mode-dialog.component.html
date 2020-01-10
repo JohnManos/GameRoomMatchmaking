@@ -1,0 +1,12 @@
+<div>
+    <h2 class="d-flex justify-content-center dialogGamesTitle">Select your preferred game mode</h2>
+    <div class="d-flex justify-content-center">
+        <button mat-button class="medium-button" mat-dialog-close routerLink="/queue">1v1</button>
+    </div>
+    <div *ngIf="data.gameType != 'Chess'" class="d-flex justify-content-center">
+        <button mat-button class="medium-button" mat-dialog-close routerLink="/queue">2v2</button>
+    </div>
+    <div *ngIf="data.gameType != 'Chess'" class="d-flex justify-content-center">
+        <button mat-button class="medium-button" mat-dialog-close routerLink="/queue">Any</button>
+    </div>
+</div>
