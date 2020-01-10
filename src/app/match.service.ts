@@ -15,6 +15,7 @@ export class MatchService {
     this.match.teamOne.push(new Player('1','testPlayer1'));
     this.match.teamTwo.push(new Player('2','testPlayer2'));
     //--------------------
+    console.log(this.match);
   }
   addPlayer(player: Player) {
     if (this.match.gameMode == 1 && this.match.teamOne.length < 1) {
@@ -31,15 +32,15 @@ export class MatchService {
     }
   }
 
-  getQueueStatus(): Observable<Player[]>{
+  /*getQueueStatus(): Observable<Player[]>{
     return this.http.get<Player[]>('localhost:8000/api');
-  }
+  }*/
 
   getMatch(): Observable<Match> {
-    return this.http.get<Match>('localhost:8000/api');
+    return this.http.get<Match>('localhost:8000/api/matches?matchId='+ this.match.matchId);
   }
 
   postMatch() {
-    this.http.post<Match>('localhost:8000/api', this.match);
+    this.http.post<Match>('localhost:8000/api/matches', this.match);
   }
 }
