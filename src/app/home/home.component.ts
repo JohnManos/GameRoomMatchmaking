@@ -3,6 +3,8 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { QueueDialogComponent } from '../dialogs/queue-dialog/queue-dialog.component';
 import { PrivateMatchDialogComponent } from '../dialogs/private-match-dialog/private-match-dialog.component';
 import { SelectGameModeDialogComponent } from '../dialogs/select-game-mode-dialog/select-game-mode-dialog.component';
+import { Player } from '../player';
+import { MockPlayerService } from '../services/mock-player.service';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +13,10 @@ import { SelectGameModeDialogComponent } from '../dialogs/select-game-mode-dialo
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {
-    
+  private currentPlayer: Player;
+
+  constructor(private mockPlayerService: MockPlayerService, public dialog: MatDialog) {
+    this.currentPlayer = mockPlayerService.getPlayerById("20895");
   }
 
   ngOnInit() {
@@ -24,11 +28,15 @@ export class HomeComponent implements OnInit {
       autoFocus: false,
     });
     
-    selectGameDialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        let selectGameDialogRef = this.dialog.open(SelectGameModeDialogComponent, { 
-          data: {gameType: result},
+    selectGameDialogRef.afterClosed().subscribe(gameType => {
+      if (gameType) {
+        let selectGameModeDialogRef = this.dialog.open(SelectGameModeDialogComponent, { 
+          data: {gameType: gameType},
           autoFocus: false,
+        });
+
+        selectGameModeDialogRef.afterClosed().subscribe(gameMode => {
+          
         });
       }
     });
