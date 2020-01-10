@@ -12,6 +12,7 @@ import { QueueDialogComponent } from './dialogs/queue-dialog/queue-dialog.compon
 import { MaterialModule } from './material/material-module';
 import { PrivateMatchDialogComponent } from './dialogs/private-match-dialog/private-match-dialog.component';
 import { SelectGameModeDialogComponent } from './dialogs/select-game-mode-dialog/select-game-mode-dialog.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SelectGameModeDialogComponent } from './dialogs/select-game-mode-dialog
     BrowserAnimationsModule,
     MaterialModule,
     MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

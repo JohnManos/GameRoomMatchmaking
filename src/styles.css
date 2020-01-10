@@ -2,3 +2,8 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    background: url("styles/images/gameroom.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-position: center top;
+}
