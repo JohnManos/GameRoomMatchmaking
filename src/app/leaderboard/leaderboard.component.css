@@ -1,1 +1,8 @@
 @import '../../styles/styles.css';
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
+
+.leaderboard-wrapper {
+    background: url("src/styles/images/gameroom.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-position: center top;
+}
