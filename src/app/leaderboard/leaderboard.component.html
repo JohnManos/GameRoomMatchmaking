@@ -2,16 +2,16 @@
     <table>
         <tr>
             <td>
-                <select id="game-type" [(ngModel)]="selectedGameType">
+                <select id="game-type" [(ngModel)]="selectedGameType" (change)="refreshLeaderboard()">
                     <option value="empty">- Select game type -</option>
                     <option value="pool">Pool</option>
                     <option value="air-hockey">Air hockey</option>
                     <option value="foosball">Foosball</option>
                 </select>
             </td>
-            <td [hidden]="selectedGameType == 'empty'">
-                <select id="game-mode">
-                    <option>- Select game mode -</option>
+            <td>
+                <select [(ngModel)]="selectedGameMode" (change)="refreshLeaderboard()" [hidden]="selectedGameType == 'empty'" id="game-mode">
+                    <option value="empty">- Select game mode -</option>
                     <option value="solo">Solo</option>
                     <option value="duo" [hidden]="selectedGameType == 'air-hockey'">Duo</option>
                 </select>
@@ -20,7 +20,7 @@
     </table>
     
     
-    <table>
+    <table [hidden]="leaderboardData.length == 0">
         <tr>
             <th>#</th>
             <th>Name</th>
