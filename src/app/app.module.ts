@@ -14,6 +14,8 @@ import { MaterialModule } from './material/material-module';
 import { PrivateMatchDialogComponent } from './dialogs/private-match-dialog/private-match-dialog.component';
 import { SelectGameModeDialogComponent } from './dialogs/select-game-mode-dialog/select-game-mode-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { EnterIdManuallyDialogComponent } from './dialogs/enter-id-manually-dialog/enter-id-manually-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     QueueDialogComponent,
     PrivateMatchDialogComponent,
-    SelectGameModeDialogComponent
+    SelectGameModeDialogComponent,
+    LoginComponent,
+    EnterIdManuallyDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +40,6 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [QueueDialogComponent, PrivateMatchDialogComponent, SelectGameModeDialogComponent]
+  entryComponents: [QueueDialogComponent, PrivateMatchDialogComponent, SelectGameModeDialogComponent, EnterIdManuallyDialogComponent]
 })
 export class AppModule { }
