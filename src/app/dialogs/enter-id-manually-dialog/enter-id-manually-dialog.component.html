@@ -1,5 +1,6 @@
 <div>
     <h2 class="dialogGamesTitle">Type in your id</h2>
-    <input class="name-input">
-    <button mat-button class="medium-button">Submit</button>
+    
+    <input class="name-input" #box (keyup)="onKey(box.value)">
+    <button mat-button mat-dialog-close class="medium-button" (click)="onSubmitButtonPressed()">Submit</button>
 </div>

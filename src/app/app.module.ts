@@ -16,6 +16,7 @@ import { SelectGameModeDialogComponent } from './dialogs/select-game-mode-dialog
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { EnterIdManuallyDialogComponent } from './dialogs/enter-id-manually-dialog/enter-id-manually-dialog.component';
+import { ScanIdDialogComponent } from './dialogs/scan-id-dialog/scan-id-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { EnterIdManuallyDialogComponent } from './dialogs/enter-id-manually-dial
     SelectGameModeDialogComponent,
     LoginComponent,
     EnterIdManuallyDialogComponent,
+    ScanIdDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,12 @@ import { EnterIdManuallyDialogComponent } from './dialogs/enter-id-manually-dial
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [QueueDialogComponent, PrivateMatchDialogComponent, SelectGameModeDialogComponent, EnterIdManuallyDialogComponent]
+  entryComponents: [
+    QueueDialogComponent,
+    PrivateMatchDialogComponent,
+    SelectGameModeDialogComponent,
+    EnterIdManuallyDialogComponent,
+    ScanIdDialogComponent,
+  ]
 })
 export class AppModule { }
