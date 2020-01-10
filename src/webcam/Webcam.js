@@ -6,7 +6,7 @@ var targetPlayers = -1;
 const maxPlayersPerTeam = 4;
 
 
-function startScanner() {
+export function startScanner() {
     Quagga.init({
         inputStream: {
             name: "Live",
@@ -136,9 +136,9 @@ function onListChange(){
 // use the list barcodes to get the barcodes in the scene
 function onTargetPlayers(){
     console.log("Target players reached, stopping.");
-    Quagga.inputStream.f
+    // Quagga.inputStream.f
 
     Quagga.stop();
 }
 
-setTargetPlayersInScene(2);
+setTargetPlayersInScene(1);

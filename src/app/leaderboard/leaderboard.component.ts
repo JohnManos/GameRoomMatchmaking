@@ -9,6 +9,8 @@ import { MockLeaderboardDataService } from '../services/mock-leaderboard-data.se
 export class LeaderboardComponent implements OnInit {
   private leaderboardData: any;
   private selectedGameType: string;
+  private selectedGameMode: string;
+
 
   constructor(private leaderboard: MockLeaderboardDataService) {
     this.leaderboard = leaderboard;
@@ -16,7 +18,17 @@ export class LeaderboardComponent implements OnInit {
 
   ngOnInit() {
     this.selectedGameType = 'empty';
-    this.leaderboardData = this.leaderboard.getLeaderboardData(0, 0);
+    this.selectedGameMode = 'empty';
+    this.leaderboardData = [];
+
+  }
+
+  refreshLeaderboard(): void {
+    if(this.selectedGameType == 'empty' || this.selectedGameMode == 'empty') {
+      this.leaderboardData = [];
+    } else {
+      this.leaderboardData = this.leaderboard.getLeaderboardData();
+    }
   }
 
 }

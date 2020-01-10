@@ -2,7 +2,7 @@
 @import "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
 
 .home-wrapper {
-    background-image: url("src/styles/images/gameroom.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background: url("src/styles/images/gameroom.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-position: center top;
 }
