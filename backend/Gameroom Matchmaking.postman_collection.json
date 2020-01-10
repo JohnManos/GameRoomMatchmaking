@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "a2744891-f36f-4fba-8c30-4f96204f95e5",
+		"name": "Gameroom Matchmaking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8000/api/users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "mmr",
+							"value": "1000",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Bryan",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "Post a user to database"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/api/matches",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "matchId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "gameType",
+							"value": "Foosball",
+							"type": "text"
+						},
+						{
+							"key": "gameMode",
+							"value": "Doubles",
+							"type": "text"
+						},
+						{
+							"key": "teamOne",
+							"value": "[{name: Sam}, {name: John}]",
+							"type": "text"
+						},
+						{
+							"key": "teamTwo",
+							"value": "[{name: Bryan}, {name: Asher}]",
+							"type": "text"
+						},
+						{
+							"key": "winner",
+							"value": "teamOne",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/matches",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"matches"
+					]
+				},
+				"description": "Add a match to database"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
