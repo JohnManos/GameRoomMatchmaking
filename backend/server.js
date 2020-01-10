@@ -2,16 +2,19 @@ const assert = require('assert');
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const express = require('express')
-const MongoClient = require('mongodb').MongoClient
 const app = express()
+
+const MongoClient = require('mongodb').MongoClient
 const connectionURL = 'mongodb://localhost:27017'
 const dbName = 'testDB'
 const userCollection = 'users'
+
 var corsOptions = {
   origin: 'http://example.com',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
 }
 app.use(cors(corsOptions))
+
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
@@ -29,11 +32,16 @@ app.route('/api/users').post((req, res) => {
 	// Connect to mongodb service
 	var db = client.db(dbName);
 	console.log('Connected to database server : ' + db.databaseName)
-	
-	insertDocuments(db, userCollection, function() {
-	  res.send(201, req.body)
-	  client.close()
-	})
+  var n = req.body.name
+  var m = req.body.mmr
+  var u = {name : n, mmr : m}
+	db.collection('users').insertOne(u, function(err, result) {
+    console.log(n)
+    console.log(m)
+    console.log('Inserted')
+    res.send(201, req.body)
+    client.close()
+  })
   })
 })
 
@@ -58,16 +66,16 @@ app.route('/api/users/:name').get((req, res) => {
 })
 
 // UPDATE
-app.route('/api/games/:name').put((req, res) => {
+app.route('/api/users/:name').put((req, res) => {
   res.send(200, req.body)
 })
 
 // DELETE
-app.route('/api/games/:name').delete((req, res) => {
+app.route('/api/users/:name').delete((req, res) => {
   res.sendStatus(204)
 })
 
-// Insert things into a specified collection
+// Insert things into this collection
 const insertDocuments = function(db, collectionName, callback) {
   // Get the documents collection
   const collection = db.collection(collectionName);
@@ -98,22 +106,12 @@ const findDocuments = function(db, callback) {
   });
 }
 
-// Find a specific user in this collection
-const findUserDocument = function(db, name, callback) {
-  // Get the documents collection
-  const collection = db.collection(userCollection);
-  // Find some documents
-  collection.find({}).toArray(function(err, docs) {
-    assert.equal(err, null);
-    console.log("Found the following records");
-    console.log(docs)
-    callback(docs);
-  });
+const dropAll = function(db, callback) {
+  const collection = db.collection('users')
+  collection.remove({})
 }
 
 // MongoClient.connect(connectionURL, function(err, client) {
   // if (err) throw err;
   // var db = client.db(dbName);
-// })
-
-
+// });
